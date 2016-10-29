@@ -1,0 +1,242 @@
+/*html {font-family: 'Fredericka the Great', cursive,'Lucida Grande',
+'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
+Meiryo, メイリオ, sans-serif}
+*/
+
+
+/*  リセットCSS*/
+a{text-decoration: none;
+    color:black;}
+
+
+html{width: 100%;}
+body{width:100%}
+
+
+
+
+
+
+.top{
+padding: 15px;
+font-size: 2em;
+background-color: #f0f0f0;
+text-align: left;font-family:'Fredericka the Great', cursive,'Lucida Grande';
+color: #darkgray;
+}
+.top-bottom{background-color: #e8e8e8; height:0.2em; margin-bottom: 20px;}
+
+
+/* ul liを、横並びにする */
+.top ul li{
+  display: -moz-inline-box; /*for Firefox 2*/
+  display: inline-block; /*for modern*/
+  width: 30%;
+  color:darkgray;
+}
+
+.top ul li a{
+  display: block;
+  color:darkgray;
+  text-align: center;
+}
+.top ul li a span{
+  font-size: 1.1em;
+}
+
+.top ul li img{
+  display: inline-block;
+width: 30px;
+}
+
+
+.news{
+  width: 100%;
+}
+.news img{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+/*########################################
+アイテム一覧表示。
+####################################*/
+
+/* アイテム一覧 */
+.item-list-ul ul{width: 100%; letter-spacing: -.4em;}
+.item-list-ul ul li{width: 33.333%; margin-bottom:1em;}
+.item-name{width: 100%}
+
+/* ul liを、横並びにする */
+.item-list-ul ul li{
+  display: inline-block; /*for modern*/
+  letter-spacing: normal;
+}
+
+@media screen and (max-width:600px){
+  .item-list-ul ul li {
+    display: block;
+    width: 100%;
+  }
+  body{
+    font-size: 0.5em;
+  }
+
+  .footer p{
+    padding: 20px;
+  }
+}
+.item-list-ul ul li a{display: block;}
+
+/*画像自体*/
+.item-img{width: 100%;  /*画像中央ぞろえ*/ text-align:center;}
+.item-img img{
+  width: 300px;
+  max-width: 100%;
+
+/*角丸に。*/
+border-radius: 50%;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+}
+
+/*アイテムネーム*/
+.item-name{text-align: center}
+/*アイテム価格*/
+.item-price{text-align: center}
+
+
+/*########################################
+アイテム詳細ページ。    .about-item-
+####################################*/
+
+/*  全体画面幅*/
+.contents{width: 70%; margin-left: 15%}
+
+/*  アイテム詳細情報*/
+.about-item,ul,li{width: 100%}
+.about-item-img{width: 100%; text-align:center}
+.about-item-img img{
+  width: 400px;
+  max-width: 100%;
+}
+
+/*  アイテムの名前 ボーダーとメイン文字*/
+.about-item-name h2{
+text-align: center;
+/*ボーダー*/
+border-bottom: 5px #f0f0f0 solid;
+border-radius: 9%;
+padding-bottom: 5px;
+/*文字カラー、文字サイズ*/
+color:#c0c0c0;  /*  文字カラー*/
+font-size:2.5em;
+/*タイトルの下に空白を入れる。#*/
+margin-bottom: 1em;
+}
+
+/*    アイテムの名前、英語用*/
+.about-item-name h2 span{
+font-family: 'Noto Sans Japanese', sans-serif;
+font-size: 100%;
+margin-left:20px;
+font-size:60%;
+color: #ccc;
+position: relative;
+top: -5px;
+}
+
+/*商品価格や商品説明*/
+
+/*アイテムの名前、説明を、左よせ、みぎよせ*/
+.about-item-left{width: 33.3333%;display: inline-block; text-align: center}
+.about-item-right{width: 62.6666%; display: inline-block; text-align: center}
+
+.about-item-desc .about-item-left {
+  vertical-align: super;
+}
+
+/*商品価格・説明共有*/
+.about-item-contents{font-size:1.5em; color:#d0d0d0;font-family: 'Noto Sans Japanese', sans-serif;
+            margin-top:2em}
+/*商品特徴*/
+.about-item-desc{}
+
+
+
+  /*########################################
+      Cart カート
+  ####################################*/
+/*カートから　またはカート内商品一覧*/
+.cart-message{
+  margin-bottom: 30px;
+}
+.cart-message table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2;
+  margin-top:30px;
+}
+.cart-message table th{
+  text-align: center;
+}
+.cart-message table tr th{
+    margin-bottom: 5px;
+}
+
+
+.cart-item-img{  text-align:center; margin-bottom: 5px;}
+.cart-item-img img{
+  width: 150px;
+  /*角丸に。*/
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+
+.cart-button{
+  width: 90%;
+  text-align: center;
+  background-color: whitesmoke;
+  padding:3px;
+}
+.cart-go,.cart-back{
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  /* margin-bottom: 20px; */
+  padding: 3px;
+  border-color: darkgray;
+  border-style: dashed;
+}
+
+
+
+  /*########################################
+      footer
+  ####################################*/
+  .footer p{
+    text-align: center;
+    padding:35px;
+    font-size: 20px;
+    color:dimgray;
+    padding-bottom: 0;
+    letter-spacing: 0.4;
+  }
+.footer{
+  height:100px;
+  width: 100%;
+  background-color: whitesmoke;
+  margin-top: 50px;
+}
+
+
+
+          .
