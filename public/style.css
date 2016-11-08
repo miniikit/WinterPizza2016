@@ -95,7 +95,7 @@ width: 30px;
 
 /*画像自体*/
 .item-img{width: 100%;  /*画像中央ぞろえ*/ text-align:center;}
-.item-img img{
+.item-img img,.about-item-img img{
   width: 300px;
   max-width: 100%;
 
@@ -119,7 +119,7 @@ border-radius: 50%;
 .contents{width: 70%; margin-left: 15%}
 
 /*  アイテム詳細情報*/
-.about-item,ul,li{width: 100%}
+.about-item,ul,li{width: 100%; margin-bottom: 8em;}
 .about-item-img{width: 100%; text-align:center}
 .about-item-img img{
   width: 400px;
@@ -200,9 +200,9 @@ top: -5px;
 }
 
 .cart-button{
-  width: 90%;
+  width: 100%;
   text-align: center;
-  background-color: whitesmoke;
+  /*  background-color: whitesmoke; */
   padding:3px;
 }
 .cart-go,.cart-back{
@@ -211,10 +211,19 @@ top: -5px;
   text-align: center;
   margin: 0 auto;
   /* margin-bottom: 20px; */
+  background-color: whitesmoke;
   padding: 3px;
   border-color: darkgray;
   border-style: dashed;
 }
+.cart-total{  /*  合計金額  */
+
+}
+.cart-none{ /*  カートが空の場合のメッセージ*/
+  height:150px;
+  text-align: center;
+}
+
 
 
 

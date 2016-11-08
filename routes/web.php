@@ -97,3 +97,11 @@ Route::get('/detail', function (Request $request) {
       session()->flush(); //sessionの全データを削除
       return redirect("/cart"); //カートのページへリダイレクト
   });
+
+
+  // カートの一部商品を削除する
+ Route::get('/delete', function(Request $request){
+    $index = $request->get("index"); //削除した商品のindexを取得
+    session()->forget("items.$index");
+    return redirect("/cart");
+});

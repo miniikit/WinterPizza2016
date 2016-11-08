@@ -13,43 +13,39 @@
 		<!--	@@@@リセットCSS		!-->
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
 
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$("select#num1").change(function(){
-					$("select#num1 option:selected").each(function(){
-		 				var num_1= $('[name=num_1]').val();
-		 				var num_2= $('[class=num_2]').val();
-						var result = num_1 * num_2;
 
-						$("#total").html(Math.ceil(result));
-					});
-				});
-			});
-		</script>
+
+		<script type="text/javascript" language="javascript">
+		        function onButtonClick()
+						{
+		          target = document.getElementById("output");
+		          target.innerText = document.forms.id_form1.id_textBox1.value;
+		          //target.innerText = document.id_form1.id_textBox1.value;//これでもOK
+		        }
+		  </script>
+
 
 </head>
 <body>
 
 
-<br><br><br>
-<form action="index.html" method="post">
-	<div class=num_2>
-		5000
-	</div>
-	<select id="num1"  name=num_1>
-		<option value = 1>1</option>
-		<option value = 2>2</option>
-		<option value = 3>3</option>
-	</select>
-</form>
-	<div id="total"></div>縁
+	<form name="form1" id="id_form1" action="">
+  	<select class="" name="">
+  		<option value = 2>2</option>
+  	</select>
+		<input name="textBox1" id="id_textBox1" type="text" value="" />
+		<input type="button" value="Exec" onclick="onButtonClick();" />
+  </form>
+
+ <div id="output"></div>
+
 <br><br>
 
 
 	<!--	@@@@ header		!-->
 		<div class="top">
 			<ul>
-				<li><a href="/"><span>Mini-Pizza</span></a></span></li>
+				<li><a href="/"><span>Mini-Pizza</span></a></li>
 					<li><a href="#">My Page</a></li>
 					<li><a href="#"> My Cart</a></li>
 			</ul>
@@ -140,7 +136,7 @@
 							</tr>
 					 </div>
 			 	 @endforeach
-				 <tr>
+				 <tr class="cart-total">
 						 <th colspan="2">
 						 	合計金額
 						 </th>
@@ -158,6 +154,7 @@
 			<div class="cart-back">
 				<a href="#">戻る</a>
 			</div>
+			　　
 			<div class="cart-go">
 				<a href="#">注文へ進む</a>
 			</div>
@@ -165,7 +162,7 @@
 
 	@else
 			<!--カートないときの処理	!-->
-				<p>
+				<p class="cart-none">
 					カートが空です。
 				</p>
 	@endif

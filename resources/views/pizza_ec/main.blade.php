@@ -20,10 +20,11 @@
 
 
 
+
 	<!--	@@@@ header		!-->
 		<div class="top">
 			<ul>
-				<li><a href="/"><span>Mini-Pizza</span></a></span></li>
+				<li><a href="/"><span>Mini-Pizza</span></a></li>
 					<li><a href="#">My Page</a></li>
 					<li><a href="/cart"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
 			</ul>
