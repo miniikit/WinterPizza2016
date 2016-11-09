@@ -23,12 +23,13 @@
 		          //target.innerText = document.id_form1.id_textBox1.value;//これでもOK
 		        }
 		  </script>
-
-
 </head>
+
+
+
+
+
 <body>
-
-
 	<form name="form1" id="id_form1" action="">
   	<select class="" name="">
   		<option value = 2>2</option>
@@ -54,30 +55,20 @@
 		<div class="top-bottom"></div>
 
 
-
-		<div class="cart-message">
-
-
-
+	<div class="cart-message">
 	@if($itemMap)
 		<!--カートある時の処理!-->
 
+
+			<a href="/delete/all" class="button" style="margin-bottom: 20px;">カートを空にする</a>
 			<table>
 				<tr>
-					<th>
-						画像
-					</th>
-					<th>
-						商品名
-					</th>
-					<th>
-						単価
-					</th>
-					<th>
-						個数
-					</th>
+					<th>画像</th>
+					<th>商品名</th>
+					<th>単価</th>
+					<th>個数</th>
 				</tr>
-			@foreach($itemMap as $item)
+			@foreach($itemMap as $itemId=>$item)
 					<!--	@@@@アイテム単位	!-->
 					<div class="item">
 						<?php /*
@@ -102,70 +93,50 @@
 						 ?>
 							<tr>
 								<a href="/detail?id={{ $item->id }}">
-										<td> <!--　画像　!-->
-												<div class="cart-item-img">
-														<img src="/images/pizza_{{ $item->id }}.jpg" alt="" />
-												</div>
-										</td>
-										<td><!--　商品名　!-->
-												<div class="item-name">
-													<a href="/detail?id={{ $item->id }}">{{ $item->name }}</a>
-												</div>
-										</td>
+									<td> <!--　画像　!--><div class="cart-item-img">
+											<img src="/images/pizza_{{ $item->id }}.jpg" alt="" /></div>
+									</td>
+									<td><!--　商品名　!--><div class="item-name">
+											<a href="/detail?id={{ $item->id }}">{{ $item->name }}</a></div>
+									</td>
 								</a>
-									<td><!--　単価　!-->
-											<div class="item-price">
-												¥ {{ number_format($item->price)}} 円
-											</div>
+									<td><!--　単価　!--><div class="item-price">
+											¥ {{ number_format($item->price)}} 円</div>
 									</td>
 									<td><!--　個数　!-->
-										<?php
-											$id = $item->id;
-										//	 echo $count[$id];
-									 	?>
+										<?php  $id = $item->id;  ?>
 										<form class="" action="#" method="post">
 											<select class="" name="">
 												<option value="<?php echo $count[$id] ?>" selected><?php echo $count[$id] ?></option>
 												<?php for($i = $count[$id]; $i > 0; $i--){ ?>
 												<option value="<?php echo $i-1; ?>"><?php echo $i-1; ?></option>
 												<?php } ?>
-
 											</select>
 										</form>
 									</td>
+								<td class="cart-one-delete"><a href="/delete?id={{ $itemId }}">削除</a></td>
 							</tr>
 					 </div>
-			 	 @endforeach
+			@endforeach
 				 <tr class="cart-total">
-						 <th colspan="2">
-						 	合計金額
-						 </th>
-						 <td colspan="2">
-							 ¥ {{ number_format($sum)}} 円
-
-						 </td>
+						 <th colspan="2">合計金額</th>
+						 <td colspan="2">¥ {{ number_format($sum)}} 円</td>
 				 </tr>
-
 			</table>
-		</div><!--cart-messageの終わり	!-->
-
+	</div><!--cart-messageの終わり	!-->
 
 		<div class="cart-button">
-			<div class="cart-back">
-				<a href="#">戻る</a>
-			</div>
-			　　
-			<div class="cart-go">
-				<a href="#">注文へ進む</a>
-			</div>
+			<div class="cart-back"><a href="#">戻る</a></div>　　
+			<div class="cart-go"><a href="#">注文へ進む</a></div>
 		</div>
-
 	@else
 			<!--カートないときの処理	!-->
-				<p class="cart-none">
-					カートが空です。
-				</p>
+				<p class="cart-none">カートが空です。</p>
 	@endif
+
+
+
+
 
 <div class="footer">
 	<p>copyright PIZZA  ALL RIGHTS RESERVERD.</p>

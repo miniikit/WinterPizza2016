@@ -72,7 +72,7 @@ width: 30px;
 
 
 /*########################################
-アイテム一覧表示。
+            アイテム一覧表示。
 ####################################*/
 
 /* アイテム一覧 */
@@ -188,6 +188,9 @@ top: -5px;
 .cart-message table tr th{
     margin-bottom: 5px;
 }
+.cart-message table tr td{
+  text-align: center;
+}
 
 
 .cart-item-img{  text-align:center; margin-bottom: 5px;}
@@ -197,6 +200,17 @@ top: -5px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+}
+.cart-one-delete{   /*  削除ボタン  */
+  text-align: center;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  background-color: magenta;
+}
+.cart-one-delete a{
+  display: block;
+
 }
 
 .cart-button{
@@ -216,6 +230,10 @@ top: -5px;
   border-color: darkgray;
   border-style: dashed;
 }
+.cart-back a, .cart-go a {  /*  クリック範囲を広げる  */
+  display: block;
+}
+
 .cart-total{  /*  合計金額  */
 
 }
