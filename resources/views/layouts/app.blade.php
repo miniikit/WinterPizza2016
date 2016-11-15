@@ -1,13 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: minion
- * Date: 2016/11/09
- * Time: 21:45
- */
-
-?>
-
 <!DOCTYPE HTML>
 <html lang="ja">
 <head>
@@ -24,6 +14,8 @@
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <!--	@@@@カートアイコン CSS!-->
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    @yield('js')
 
         <title> @yield('title') | MiniPizza</title>
 

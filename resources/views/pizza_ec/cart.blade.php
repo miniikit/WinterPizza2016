@@ -73,7 +73,7 @@
 
 		<div class="cart-button">
 			<div class="cart-back"><a href="#">戻る</a></div>　　
-			<div class="cart-go"><a href="#">注文へ進む</a></div>
+			<div class="cart-go"><a href="/order/inputAdress">注文へ進む</a></div>
 		</div>
 	@else
 			<!--カートないときの処理	!-->

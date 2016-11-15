@@ -18,34 +18,29 @@ Route::get('/pizza_1', function () {
 */
 
 
-// Stripe フォーム
-Route::get('/stripe',function(){
-    return view('pizza_ec.payment');
-});
+
 
 // Stripe 決済処理
 Route::post('/stripe/pay', function () {
-     \Stripe\Stripe::setApiKey("sk_test_f36BK7fZybhbIc3bIZsIWdTO");
-
+    //API key
+      \Stripe\Stripe::setApiKey("sk_test_f36BK7fZybhbIc3bIZsIWdTO");
     // Get the credit card details submitted by the form
-    $token = $_POST['stripeToken'];
+      $token = $_POST['stripeToken'];
     // Create a charge: this will charge the user's card
-    try {
-        $charge = \Stripe\Charge::create(array(
-            "amount" => 1000, // 課金額はココで調整
-            "currency" => "jpy",
-            "source" => $token,
-            "description" => "Example charge"
-        ));
-    } catch(\Stripe\Error\Card $e) {
-        // The card has been declined
-    }
+        try {
+            $charge = \Stripe\Charge::create(array(
+                "amount" => 1000, // 課金額はココで調整
+                "currency" => "jpy",
+                "source" => $token,
+                "description" => "Example charge"
+            ));
+            return redirect('/order/complete');
+        } catch(\Stripe\Error\Card $e) {
+            // The card has been declined
+        }
     // サンクスメール送る...
+        return redirect('/404');
 
-    $pizza = DB::table('pizza')->get();
-    return view('/pizza_ec/main',[
-        "pizza" => $pizza
-    ]);
 });
 
 
@@ -64,6 +59,22 @@ Route::get('/', function () {
 //     return view('pizza_ec.cart');
 // });
 
+//お届け先住所
+Route::get('/order/inputAdress', function () {
+     return view('pizza_ec.order.address');
+ });
+//注文確認
+Route::post('/order/confirm', function () {
+    return view('pizza_ec.order.confirm');
+});
+// Stripe カード情報入力
+Route::get('/order/pay',function(){
+    return view('pizza_ec.order.payment');
+});
+//注文完了
+Route::get('/order/complete', function () {
+    return view('pizza_ec.order.complete');
+});
 
 
 //ピザ詳細ページ

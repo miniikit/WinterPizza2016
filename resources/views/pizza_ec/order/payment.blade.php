@@ -7,7 +7,7 @@
  */
 
 ?>
-@extends('layouts/app')
+@extends('layouts.app')
 
 <html>
 <head>
