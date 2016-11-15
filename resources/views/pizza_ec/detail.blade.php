@@ -1,36 +1,6 @@
-<html>
-<head>
-<meta charset="utf-8">
-<title>PHP</title>
-<!--	<link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
-!-->
+@extends('layouts/app')
 
-<!--	@@@@CSS一覧		!-->
-<!--	@@@@　Google Fonts タイトル向け		!-->
-<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
-<!--	@@@@ CSS		!-->
-<link rel="stylesheet" href="../style.css" media="screen" title="no title">
-<!--	@@@@リセットCSS		!-->
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-
-<!--  @@@@ Google Fonts 商品詳細のタイトル向け		!-->
-<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
-</head>
-<body>
-
-
-	<!--	@@@@ header		!-->
-		<div class="top">
-			<ul>
-				<li><a href="/"><span>Mini-Pizza</span></a></li>
-					<li><a href="#">My Page</a></li>
-					<li><a href="/cart"><i class="fa fa-shopping-cart"></i>My Cart</a></li>
-			</ul>
-		</div>
-
-<!-- グラデーション用div要素　top-bottom!-->
-<div class="top-bottom"></div>
-
+@section('contents')
 <!--	@@@@ コンテンツ		!-->
 <div class="contents">
 
@@ -107,10 +77,4 @@
 
 </div>	<!-- コンテンツ部分終了 !-->
 
-<div class="footer">
-	<p>copyright PIZZA  ALL RIGHTS RESERVERD.</p>
-</div>
-
-
-</body>
-</html>
+	@endsection

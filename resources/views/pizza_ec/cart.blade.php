@@ -1,93 +1,6 @@
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>PHP</title>
-<!--	<link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
-!-->
+@extends('layouts/app')
 
-<!--	@@@@CSS一覧		!-->
-		<!--	@@@@　Google Fonts タイトル向け		!-->
-		<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
-		<!--	@@@@ CSS		!-->
-		<link rel="stylesheet" href="style.css" media="screen" title="no title">
-		<!--	@@@@リセットCSS		!-->
-		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-
-
-
-	<!--	<script type="text/javascript" language="javascript">
-		        function onButtonClick()
-						{
-		          target = document.getElementById("output");
-		          target.innerText = document.forms.id_form1.id_textBox1.value;
-		          //target.innerText = document.id_form1.id_textBox1.value;//これでもOK
-		        }
-		  </script>
-		!-->
-
-	<!--
-	<script type = "text/javascript">
-		window.onload = function() {
-			var input01 = document.getElementsByClassName( "cart-num-4js" ); // DOM要素を用意しておく
-			var input02 = document.getElementById( "input02" ); // DOM要素を用意しておく
-			var answer = document.getElementById( "answer" ); // DOM要素を用意しておく
-
-			input01.value = ""; // 初期化
-			input02.value = ""; // 初期化
-			answer.value = ""; // 初期化
-
-			input02.onkeyup = function() { // キー入力が終わった瞬間に実行される関数の宣言
-				answer.innerHTML = parseInt( input01.value, 10 ) * parseInt( input02.value, 10 ); // 実際の計算
-			};
-		}
-	</script>
-	!-->
-	
-</head>
-
-
-
-
-
-<body>
-<!--
-	<form name="form1" id="id_form1" action="">
-  	<select class="" name="">
-  		<option value = 2>2</option>
-  	</select>
-		<input name="textBox1" id="id_textBox1" type="text" value="" />
-		<input type="button" value="Exec" onclick="onButtonClick();" />
-  </form>
-
- <div id="output"></div>
-
-<br><br>
-!-->
-
-<a href="/payment">Payment Page</a>
-<a href="/test">テストページ</a>
-<a href="/stripe">ストラプ ページ</a>
-
-<form action="#">
-		<input id="input01" type="text">
-		<input id="input02" type="text">
-		<div id="answer"></div>
-	</form>
-	<br><br>
-
-
-	<!--	@@@@ header		!-->
-		<div class="top">
-			<ul>
-				<li><a href="/"><span>Mini-Pizza</span></a></li>
-					<li><a href="#">My Page</a></li>
-					<li><a href="#"> My Cart</a></li>
-			</ul>
-		</div>
-		<!-- グラデーション用div要素　top-bottom!-->
-		<div class="top-bottom"></div>
-
-
+@section('contents')
 	<div class="cart-message">
 	@if($itemMap)
 		<!--カートある時の処理!-->
@@ -167,12 +80,4 @@
 				<p class="cart-none">カートが空です。</p>
 	@endif
 
-
-
-
-
-<div class="footer">
-	<p>copyright PIZZA  ALL RIGHTS RESERVERD.</p>
-</div>
-</body>
-</html>
+@endsection
