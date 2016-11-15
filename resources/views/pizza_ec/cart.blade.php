@@ -15,7 +15,7 @@
 
 
 
-		<script type="text/javascript" language="javascript">
+	<!--	<script type="text/javascript" language="javascript">
 		        function onButtonClick()
 						{
 		          target = document.getElementById("output");
@@ -23,6 +23,26 @@
 		          //target.innerText = document.id_form1.id_textBox1.value;//これでもOK
 		        }
 		  </script>
+		!-->
+
+	<!--
+	<script type = "text/javascript">
+		window.onload = function() {
+			var input01 = document.getElementsByClassName( "cart-num-4js" ); // DOM要素を用意しておく
+			var input02 = document.getElementById( "input02" ); // DOM要素を用意しておく
+			var answer = document.getElementById( "answer" ); // DOM要素を用意しておく
+
+			input01.value = ""; // 初期化
+			input02.value = ""; // 初期化
+			answer.value = ""; // 初期化
+
+			input02.onkeyup = function() { // キー入力が終わった瞬間に実行される関数の宣言
+				answer.innerHTML = parseInt( input01.value, 10 ) * parseInt( input02.value, 10 ); // 実際の計算
+			};
+		}
+	</script>
+	!-->
+	
 </head>
 
 
@@ -30,6 +50,7 @@
 
 
 <body>
+<!--
 	<form name="form1" id="id_form1" action="">
   	<select class="" name="">
   		<option value = 2>2</option>
@@ -41,6 +62,18 @@
  <div id="output"></div>
 
 <br><br>
+!-->
+
+<a href="/payment">Payment Page</a>
+<a href="/test">テストページ</a>
+<a href="/stripe">ストラプ ページ</a>
+
+<form action="#">
+		<input id="input01" type="text">
+		<input id="input02" type="text">
+		<div id="answer"></div>
+	</form>
+	<br><br>
 
 
 	<!--	@@@@ header		!-->
@@ -106,7 +139,7 @@
 									<td><!--　個数　!-->
 										<?php  $id = $item->id;  ?>
 										<form class="" action="#" method="post">
-											<select class="" name="">
+											<select class="cart-num-4js" name="">
 												<option value="<?php echo $count[$id] ?>" selected><?php echo $count[$id] ?></option>
 												<?php for($i = $count[$id]; $i > 0; $i--){ ?>
 												<option value="<?php echo $i-1; ?>"><?php echo $i-1; ?></option>

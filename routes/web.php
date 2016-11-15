@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,37 @@ Route::get('/pizza_1', function () {
     return view('pizza_ec/about_pizza_01');
 });
 */
+
+
+// Stripe フォーム
+Route::get('/stripe',function(){
+    return view('pizza_ec.payment');
+});
+
+// Stripe 決済処理
+Route::post('/stripe/pay', function () {
+     \Stripe\Stripe::setApiKey("sk_test_f36BK7fZybhbIc3bIZsIWdTO");
+
+    // Get the credit card details submitted by the form
+    $token = $_POST['stripeToken'];
+    // Create a charge: this will charge the user's card
+    try {
+        $charge = \Stripe\Charge::create(array(
+            "amount" => 1000, // 課金額はココで調整
+            "currency" => "jpy",
+            "source" => $token,
+            "description" => "Example charge"
+        ));
+    } catch(\Stripe\Error\Card $e) {
+        // The card has been declined
+    }
+    // サンクスメール送る...
+
+    $pizza = DB::table('pizza')->get();
+    return view('/pizza_ec/main',[
+        "pizza" => $pizza
+    ]);
+});
 
 
 //トップページ
