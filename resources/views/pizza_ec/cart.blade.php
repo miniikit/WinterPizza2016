@@ -5,8 +5,13 @@
 	@if($itemMap)
 		<!--カートある時の処理!-->
 
-			<button type="button" name=""></button>
-			<a href="/delete/all" class="button" style="margin-bottom: 20px;">カートを空にする</a>
+			<div class="cart-button">
+				<div class="cart-go">
+					<a href="/delete/all" class="button">カートを全て空にする</a>
+				</div>
+			</div>
+
+
 			<table>
 				<tr>
 					<th>画像</th>

@@ -146,3 +146,7 @@ Route::get('/detail', function (Request $request) {
         $cart->removeItem($itemId);
     return redirect("/cart");
 });
+
+Auth::routes();
+
+//\Illuminate\Routing\Route::get('/login', 'HomeController@index');
