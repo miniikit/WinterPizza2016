@@ -57,14 +57,25 @@ width: 30px;
 }
 
 
-.news{
-  width: 100%;
-}
-.news img{
-  width: 100%;
+/*.news{*/
+  /*width: 100%;*/
+/*}*/
+/*.news img{*/
+  /*width: 100%;*/
+/*}*/
+
+.slider{
+  width:50%;
+  margin:40px auto;
 }
 
-
+.slider img{
+  width:100%;
+  margin:0 auto;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+}
 
 
 

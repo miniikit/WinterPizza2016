@@ -11,23 +11,16 @@ class RegisterShipped extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $sendData;
+
+    public function __construct($sendData)
     {
-        //
+        $this->sendData = $sendData;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->subject('タイトルサンプル')
+            ->text('pizza_ec.emails.register');
     }
 }

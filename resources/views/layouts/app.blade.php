@@ -18,16 +18,27 @@
     <!--	@@@@リセットCSS		!-->
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <!--	@@@@カートアイコン CSS!-->
-        <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <!--    @@@@Slider  !-->
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!--  Jquery  !-->
+        <script src="/plugin/jquery-3.1.1.min.js"></script>
 
-    <!-- Scripts -->
+    @yield('css')
+
+    <!-- Scripts !-->
     <script>
         window.Laravel = <?php echo json_encode([
                 'csrfToken' => csrf_token(),
         ]); ?>
     </script>
 
+    <!-- !-->
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
     @yield('js')
+
 
         <title> @yield('title') | MiniPizza</title>
 
@@ -69,11 +80,12 @@
         <li></li>
     </ul>
 </div>
+<!-- グラデーション用div要素　top-bottom!-->
+<div class="top-bottom"></div>
 
 @yield('header-img')
 
-<!-- グラデーション用div要素　top-bottom!-->
-<div class="top-bottom"></div>
+
 
 
 

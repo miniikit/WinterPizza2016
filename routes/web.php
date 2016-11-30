@@ -18,6 +18,8 @@ Route::get('/pizza_1', function () {
 */
 
 
+Route::get('/register/send','RegisteShipped@apply');
+
 
 
 // Stripe 決済処理
@@ -120,6 +122,7 @@ Route::get('/detail', function (Request $request) {
           "itemMap" => $itemMap ,
           "sum" => $totalSum
       ]);
+
   });
 
 
