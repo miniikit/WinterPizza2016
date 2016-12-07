@@ -20,7 +20,7 @@
     <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="pk_test_zD2Cld6fOOiWPRgo7FQrDYWJ"
-            data-amount="1000"
+            data-amount="{{ (int)$pay }}"
             data-name="Demo Site"
             data-description="Widget"
             data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
@@ -28,6 +28,7 @@
             data-currency="jpy">
     </script>
     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+    <input type="hidden" name="pay" value="{{$pay}}">
 </form>
 @endsection
 

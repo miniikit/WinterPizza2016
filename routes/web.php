@@ -23,15 +23,16 @@ Route::get('/register/send','RegisteShipped@apply');
 
 
 // Stripe 決済処理
-Route::post('/stripe/pay', function () {
+Route::post('/stripe/pay', function (Request $request) {
     //API key
       \Stripe\Stripe::setApiKey("sk_test_f36BK7fZybhbIc3bIZsIWdTO");
     // Get the credit card details submitted by the form
       $token = $_POST['stripeToken'];
     // Create a charge: this will charge the user's card
         try {
+            $pay = (int)$request->pay;  //intに変換
             $charge = \Stripe\Charge::create(array(
-                "amount" => 1000, // 課金額はココで調整
+                "amount" => $pay,    //課金額
                 "currency" => "jpy",
                 "source" => $token,
                 "description" => "Example charge"
@@ -48,7 +49,7 @@ Route::post('/stripe/pay', function () {
 
 //トップページ
 Route::get('/', function () {
-    $pizza = DB::table('pizza')->get();
+    $pizza = DB::table('products_master')->get();
     return view('/pizza_ec/main',[
         "pizza" => $pizza
     ]);
@@ -62,7 +63,7 @@ Route::get('/', function () {
 // });
 
 //お届け先住所
-Route::get('/order/inputAdress', function () {
+Route::get('/order/inputAddress', function () {
      return view('pizza_ec.order.address');
  });
 //注文確認
@@ -70,8 +71,10 @@ Route::post('/order/confirm', function () {
     return view('pizza_ec.order.confirm');
 });
 // Stripe カード情報入力
-Route::get('/order/pay',function(){
-    return view('pizza_ec.order.payment');
+Route::any('/order/pay',function(Request $request){
+
+    $pay = $request->totalSum;
+    return view('pizza_ec.order.payment',compact('pay'));
 });
 //注文完了
 Route::get('/order/complete', function () {
@@ -82,7 +85,7 @@ Route::get('/order/complete', function () {
 //ピザ詳細ページ
 Route::get('/detail', function (Request $request) {
      $id = $request->get("id");
-     $pizza = DB::table('pizza')->where('id', $id)->first();
+     $pizza = DB::table('products_master')->where('id', $id)->first();
      return view('pizza_ec.detail', [
          "pizza" => $pizza
     //  基本的な書式　return view('pizza_ec.detail',[]

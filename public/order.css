@@ -16,3 +16,23 @@
 .button{
     margin:0 auto;
 }
+
+
+
+#content{
+    width:80%;
+    height:auto;
+    margin:0 auto;
+}
+#content h1{
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+#content .buttons{
+    text-align:center;
+}
+#content .button{
+    margin-left:10px;
+    margin-right:10px;
+}

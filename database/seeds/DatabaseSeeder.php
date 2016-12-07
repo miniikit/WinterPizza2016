@@ -13,9 +13,15 @@ class DatabaseSeeder extends Seeder
     {
                       // $this->call(UsersTableSeeder::class);
         // データのクリア
-       DB::table('pizza')->truncate();
 
-       // データ挿入
+        DB::table('users')->truncate();
+        DB::table('password_resets')->truncate();
+        DB::table('products_master')->truncate();
+        DB::table('orders_table')->truncate();
+        DB::table('orders_details_table')->truncate();
+
+
+        // データ挿入
        $now = Carbon::now();
 
                //データ集
@@ -80,8 +86,7 @@ class DatabaseSeeder extends Seeder
                  "updated_at" => $now
                ];
 
-
-      DB::table('pizza')->insert([$pannacotta, $mrrobot,$pater,$secret,$sprized]);
+      DB::table('products_master')->insert([$pannacotta, $mrrobot,$pater,$secret,$sprized]);
       // DB::table('pizza')->insert([$pack]);
 
     }

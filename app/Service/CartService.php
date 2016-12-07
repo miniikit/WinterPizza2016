@@ -53,7 +53,7 @@ class CartService
      */
     public function addItem($id,$num){
         //idが一致するものをテーブルから検索、取得
-            $item = DB::table('pizza')->where('id', $id)->first();
+            $item = DB::table('products_master')->where('id', $id)->first();
         //既にカートに商品が入っていたらそれを$itemsに読み込む
             $items = session()->get("items",[]); //セッションデータを取得、nullの場合は空の配列
         //個数の処理

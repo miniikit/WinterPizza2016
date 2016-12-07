@@ -29,7 +29,7 @@ padding: 15px;
 font-size: 2em;
 background-color: #f0f0f0;
 text-align: left;font-family:'Fredericka the Great', cursive,'Lucida Grande';
-color: #darkgray;
+color: darkgray;
 }
 .top-bottom{background-color: #e8e8e8; height:0.2em; margin-bottom: 20px;}
 
@@ -66,6 +66,7 @@ width: 30px;
 
 .slider{
   width:50%;
+  min-width:500px;
   margin:40px auto;
 }
 
@@ -108,7 +109,7 @@ width: 30px;
 .item-img{width: 100%;  /*画像中央ぞろえ*/ text-align:center;}
 .item-img img,.about-item-img img{
   width: 300px;
-  max-width: 100%;
+  max-width: 85%;
 
 /*角丸に。*/
 border-radius: 50%;
@@ -291,6 +292,15 @@ top: -5px;
   body{
     font-size: 0.7em;
   }
+  .slider{
+    width:100%;
+    min-width:150px;
+    margin-top:0;
+  }
+  .slider img{
+    border-radius:0;
+  }
+
 }
 
 
