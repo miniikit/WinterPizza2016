@@ -35,7 +35,7 @@ Route::post('/stripe/pay', function (Request $request) {
                 "amount" => $pay,    //課金額
                 "currency" => "jpy",
                 "source" => $token,
-                "description" => "Example charge"
+                "description" => "Minion charge"
             ));
             return redirect('/order/complete');
         } catch(\Stripe\Error\Card $e) {

@@ -50,9 +50,9 @@
 <div class="top">
     <ul>
         <li><a href="/"><span>Mini-Pizza</span></a></li>
-        <li><a href="#">My Page</a></li>
+        {{-- <li><a href="#">My Page</a></li> --}}
         <li><a href="/cart"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
-        <!-- Authentication Links -->
+{{--        <!-- Authentication Links -->
         @if (Auth::guest())
             <li><a href="{{ url('/login') }}">Login</a></li>
             <li><a href="{{ url('/register') }}">Register</a></li>
@@ -78,6 +78,7 @@
             </li>
         @endif
         <li></li>
+--}}
     </ul>
 </div>
 <!-- グラデーション用div要素　top-bottom!-->
