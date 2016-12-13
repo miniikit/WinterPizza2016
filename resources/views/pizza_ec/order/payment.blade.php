@@ -21,8 +21,8 @@
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="pk_test_zD2Cld6fOOiWPRgo7FQrDYWJ"
             data-amount="{{ (int)$pay }}"
-            data-name="Demo Site"
-            data-description="Widget"
+            data-name="Minion Pizza"
+            data-description="PAYMENT"
             data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
             data-locale="ja"
             data-currency="jpy">

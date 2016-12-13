@@ -35,7 +35,7 @@ Route::post('/stripe/pay', function (Request $request) {
                 "amount" => $pay,    //課金額
                 "currency" => "jpy",
                 "source" => $token,
-                "description" => "Minion charge"
+                "description" => "Example charge"
             ));
             return redirect('/order/complete');
         } catch(\Stripe\Error\Card $e) {
@@ -72,7 +72,6 @@ Route::post('/order/confirm', function () {
 });
 // Stripe カード情報入力
 Route::any('/order/pay',function(Request $request){
-
     $pay = $request->totalSum;
     return view('pizza_ec.order.payment',compact('pay'));
 });
